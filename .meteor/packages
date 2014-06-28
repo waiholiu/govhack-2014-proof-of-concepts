@@ -6,3 +6,11 @@
 standard-app-packages
 autopublish
 insecure
+underscore
+jquery
+coffeescript
+less
+bootstrap3-less
+npm
+typeahead
+iron-router
