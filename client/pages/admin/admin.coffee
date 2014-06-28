@@ -16,5 +16,6 @@ Template.admin.events =
 			fileReader = new FileReader()
 			fileReader.onload = (file) ->
 				Meteor.call 'adminUploadFile', category, file.srcElement.result, name, 'utf8'
+				alert 'Uploaded!'
 			fileReader.readAsText file
 		false
