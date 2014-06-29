@@ -19,3 +19,7 @@ Template.admin.events =
 				alert 'Uploaded!'
 			fileReader.readAsText file
 		false
+
+Template.admin.helpers
+	getCategoryCount: (category) ->
+		share.EnergyRatings.find(Category: category).count()
