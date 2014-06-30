@@ -1,14 +1,6 @@
 <template name="admin">
 	<div class="container">
 		<h1>Administration</h1>
-		<h2>Dataset summary</h2>
-		<dl class="dl-horizontal">
-			{{#each categories}}
-				<dt>{{description}}</dt>
-				<dd>{{getCategoryCount category}}</dd>
-			{{/each}}
-
-		</dl>
 		<h2>Dataset upload</h2>
 
 		<form class="form">
@@ -26,5 +18,24 @@
 			</div>
 			<button class="btn btn-primary" id="uxUploadDatasetButton" type="submit">Upload dataset</button>
 		</form>
+
+		<h2>Dataset summary</h2>
+		<table class="table table-bordered table-striped">
+			<thead>
+			<tr>
+				<th>Category</th>
+				<th>Count</th>
+			</tr>
+			</thead>
+			<tbody>
+			{{#each categories}}
+				<tr>
+					<td>{{description}}</td>
+					<td>{{getCategoryCount category}}</td>
+				</tr>
+			{{/each}}
+			</tbody>
+		</table>
+
 	</div>
 </template>
