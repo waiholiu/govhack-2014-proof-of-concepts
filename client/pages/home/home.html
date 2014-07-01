@@ -1,5 +1,192 @@
 <template name="home">
-	<div class="container">
-		<h1>Home</h1>
-	</div>
+	<div id="page-top"></div>
+	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+					<i class="fa fa-bars"></i>
+				</button>
+				<a class="navbar-brand" href="#page-top">
+					<i class="fa fa-lightbulb-o"></i>  <span class="light">My</span> Energy <span class="light">Calculator</span>
+				</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+				<ul class="nav navbar-nav">
+					<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+					<li class="hidden">
+						<a href="#page-top"></a>
+					</li>
+					<li class="page-scroll">
+						<a href="#appliances">Appliances</a>
+					</li>
+					<li class="page-scroll">
+						<a href="#results">Results</a>
+					</li>
+					<li class="page-scroll">
+						<a href="#about">About</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
+
+	<section class="intro">
+		<div class="intro-body">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<h1 class="brand-heading">Energy</h1>
+						<p class="intro-text">
+							Ever wondered how much your major appliances are costing you?
+						</p>
+						<div class="page-scroll">
+							<a href="#appliances" class="btn btn-circle">
+								<i class="fa fa-angle-double-down animated"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="appliances" class="container content-section text-center">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2">
+				<h2>My Appliances</h2>
+				<p>
+					We have data for most TVs, Dishwashers, Air Conditioners, Washing Machines, Clothes Dryers and Computer Monitors
+					sold in Australia, courtesy of
+					<a href="https://data.gov.au/dataset/energy-rating-for-household-appliances">the Department of Industry</a>.
+				</p>
+
+				<form id="uxAddNewApplianceForm" action="">
+					<div class="form-group">
+						<label for="uxBrand">What brand is your appliance?</label>
+						<select class="form-control" name="Brand" id="uxBrand">
+							<option value="">Miele</option>
+							<option value="">Samsung</option>
+							<option value="">LG</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="uxappliancecategory">What type of appliance is it?</label>
+						<select class="form-control" name="Category" id="uxApplianceCategory"></select>
+					</div>
+					<div class="form-group">
+						<label for="uxApplianceModel">What is the model number?</label>
+						<select class="form-control" name="Model" id="uxApplianceModel"></select>
+					</div>
+					<div class="text-center">
+						<button class="btn btn-default btn-lg" id="uxAddApplianceButton" type="submit">
+							<i class="fa fa-plus-circle"></i>
+							Add
+						</button>
+						<div class="page-scroll">
+							<a href="#results" class="btn btn-default btn-lg">
+								<i class="fa fa-check-circle"></i>
+								Done
+							</a>
+						</div>
+					</div>
+				</form>
+				<table class="table" style="margin-top: 30px;">
+					<thead>
+					<tr>
+						<th class="text-center">Type</th>
+						<th class="text-center">Brand</th>
+						<th class="text-center">Model</th>
+						<th style="width: 10px;"></th>
+						<th style="width: 10px;"></th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>Washing machine</td>
+						<td>Miele</td>
+						<td>WD8657</td>
+						<td>
+							<button class="edit-button btn btn-link"><i class="fa fa-edit"></i> Edit</button>
+						</td>
+						<td>
+							<button class="edit-button btn btn-link"><i class="fa fa-trash-o"></i> Remove</button>
+						</td>
+					</tr>
+					<tr>
+						<td>Clothes Dryer</td>
+						<td>LG</td>
+						<td>ABC123</td>
+						<td>
+							<button class="edit-button btn btn-link"><i class="fa fa-edit"></i> Edit</button>
+						</td>
+						<td>
+							<button class="edit-button btn btn-link"><i class="fa fa-trash-o"></i> Remove</button>
+						</td>
+					</tr>
+					<tr>
+						<td>Dishwasher</td>
+						<td>Samsung</td>
+						<td>RP9854</td>
+						<td>
+							<button class="edit-button btn btn-link"><i class="fa fa-edit"></i> Edit</button>
+						</td>
+						<td>
+							<button class="edit-button btn btn-link"><i class="fa fa-trash-o"></i> Remove</button>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+				<div class="page-scroll">
+					<a href="#results" class="btn btn-circle">
+						<i class="fa fa-angle-double-down animated"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="results" class="content-section text-center">
+		<div class="download-section">
+			<div class="container">
+				<div class="col-lg-8 col-lg-offset-2">
+					<h2>Download Grayscale</h2>
+					<p>You can download Grayscale for free on the download page at Start Bootstrap. You can also get the source code directly from GitHub if you prefer. Additionally, Grayscale is the first Start Bootstrap theme to come with a LESS file for easy color customization!</p>
+					<a href="http://startbootstrap.com/grayscale" class="btn btn-default btn-lg">Visit Download Page</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="about" class="container content-section text-center">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2">
+				<h2>About</h2>
+				<p>
+					This application was written by Jonathan Moffatt and Wai Liu over the space
+					of 48 hours during <a href="http://www.govhack.org/">GovHack 2014</a>.
+				</p>
+				<p>
+					It's open source and is up on GitHub, so feel free to
+					clone or fork it yourself.
+				</p>
+				<p>
+					This project builds on the shoulders of many awesome open source frameworks
+					and libraries, including:
+				</p>
+				<p>To do...</p>
+				<p>
+					Administrators can update the energy rating datasets
+					<a href="{{pathFor 'admin'}}">here</a>.
+				</p>
+				<ul class="list-inline banner-social-buttons">
+					<li><a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
 </template>
